@@ -11,7 +11,7 @@
     = f.text_field :title
   .field
     = f.label :desc
-    = f.text_field :desc
+    = f.text_area :desc
   .field
     = f.label :date
     = f.date_select :date, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year], use_month_numbers: true

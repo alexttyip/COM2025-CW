@@ -18,5 +18,8 @@
   .field
     = f.label :dob
     = f.date_select :dob, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year], use_month_numbers: true
+  .field
+    = f.label :profile_pic
+    = f.file_field :profile_pic
   .actions
     = f.submit 'Save'
