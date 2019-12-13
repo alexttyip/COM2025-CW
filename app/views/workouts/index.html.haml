@@ -1,0 +1,29 @@
+%h1 Listing workouts
+
+%table(border="1" )
+  %thead
+    %tr
+      %th Title
+      %th Desc
+      %th Date
+      %th Intensity
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @workouts.each do |workout|
+      %tr
+        %td= workout.title
+        %td= workout.desc
+        %td= workout.date
+        %td= workout.intensity
+        %td= workout.user.first_name
+        %td= link_to 'Show User', [@user]
+        %td= link_to 'Edit Workout', edit_user_workout_path(@user, workout)
+        %td= link_to 'Destroy Workout', [@user, workout], method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Workout', new_user_workout_path(@user)

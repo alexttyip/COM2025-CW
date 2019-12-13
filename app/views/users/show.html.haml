@@ -1,0 +1,37 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @user.first_name
+%p
+  %b Last name:
+  = @user.last_name
+%p
+  %b Sex:
+  = @user.sex
+%p
+  %b Dob:
+  = @user.dob
+
+%h2
+  Workouts
+
+  %table(border="1")
+    %thead
+      %tr
+        %th Title
+        %th Date
+        %th
+
+    %tbody
+      - @user.workouts.each do |workout|
+        %tr
+          %td= workout.title
+          %td= workout.date
+          %td= link_to 'Show Workout', user_workout_path(@user, workout)
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Add Workout', new_user_workout_path(@user)
+\|
+= link_to 'Back', users_path

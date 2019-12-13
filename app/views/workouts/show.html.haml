@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @workout.title
+%p
+  %b Desc:
+  = @workout.desc
+%p
+  %b Date:
+  = @workout.date
+%p
+  %b Intensity:
+  = @workout.intensity
+%p
+  %b User:
+  = @workout.user
+
+= link_to 'Edit', edit_user_workout_path(@user, @workout)
+\|
+= link_to 'Back', user_workouts_path(@user)
