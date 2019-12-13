@@ -14,7 +14,7 @@
     = f.text_field :last_name
   .field
     = f.label :sex
-    = f.select :sex, [:male, :female, :others]
+    = f.select :sex, User.sexes.keys
   .field
     = f.label :dob
     = f.date_select :dob, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year], use_month_numbers: true
