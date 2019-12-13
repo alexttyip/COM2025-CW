@@ -17,6 +17,6 @@
     = f.select :sex, [:male, :female, :others]
   .field
     = f.label :dob
-    = f.date_select :dob
+    = f.date_select :dob, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year], use_month_numbers: true
   .actions
     = f.submit 'Save'

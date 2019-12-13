@@ -14,7 +14,7 @@
     = f.text_field :desc
   .field
     = f.label :date
-    = f.date_select :date
+    = f.date_select :date, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year], use_month_numbers: true
   .field
     = f.label :intensity
     = f.number_field :intensity
