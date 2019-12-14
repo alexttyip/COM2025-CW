@@ -16,6 +16,26 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+  .field
+    = f.label :sex
+    %br/
+    = f.select :sex, User.sexes.keys
+  .field
+    = f.label :dob
+    %br/
+    = f.date_select :dob, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year], use_month_numbers: true
+  .field
+    = f.label :profile_pic
+    %br/
+    = f.file_field :profile_pic
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
