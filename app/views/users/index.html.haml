@@ -19,11 +19,11 @@
         %h1{ :class => "title" }= workout.title
       .flex-row
         %h5{ :class => "date" }= "#{workout.date} ∙ #{workout.workout_type.capitalize}"
-      .flex-row
-        %p{ :class => "desc"}= workout.desc
-        -#= link_to 'Show User', [@user]
-        -#= link_to 'Edit Workout', edit_user_workout_path(@user, workout)
-        -#= link_to 'Destroy Workout', [@user, workout], method: :delete, data: { confirm: 'Are you sure?' }
+  -#    .flex-row
+  -#      %p{ :class => "desc"}= workout.desc
+  -#      -#= link_to 'Show User', [@user]
+  -#      -#= link_to 'Edit Workout', edit_user_workout_path(@user, workout)
+  -#      -#= link_to 'Destroy Workout', [@user, workout], method: :delete, data: { confirm: 'Are you sure?' }
 
   %a{ :href => new_user_workout_path(@user) }
     %button{ :class => "fab" }

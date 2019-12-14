@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   #    sessions: 'users/sessions'
   #}
 
-  resources :users, only: [:index] do
+  get "/users/:username", to: "users#index", as: "users"
+
+  resources :users do
     resources :workouts, except: [:index]
   end
 
