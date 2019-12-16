@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: "u"
 
   root 'home#home'
   get "/u/:username", to: "users#index", as: "users"
 
-  resources :users do
-    resources :workouts, except: [:index]
+  resources :users, path: "u" do
+    resources :workouts
   end
 end

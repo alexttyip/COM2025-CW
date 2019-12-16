@@ -2,15 +2,12 @@ class WorkoutsController < ApplicationController
   before_action :get_user
   before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
-  # GET /workouts
-  # GET /workouts.json
   def index
-    @workouts = @user.workouts
+    redirect_to users_path(@user.username)
   end
 
-  # GET /workouts/1
-  # GET /workouts/1.json
   def show
+    redirect_to users_path(@user.username)
   end
 
   # GET /workouts/new
@@ -65,7 +62,7 @@ class WorkoutsController < ApplicationController
   private
 
   def get_user
-    @user = User.find(params[:user_id])
+    @user = User.where(username: params[:user_id]).take
   end
 
   # Use callbacks to share common setup or constraints between actions.
