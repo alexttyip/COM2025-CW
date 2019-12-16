@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   get 'tree_map', to: 'home#tree_map'
   post 'request_contact', to: 'home#request_contact'
 
-  get '/u/:username', to: 'users#index', as: :users
+  get '/u/:username', to: 'users#index', as: :user
 
-  resources :users, path: 'u' do
+  resources :users, path: 'u', except: [:new, :edit, :create, :show, :update, :destroy] do
     resources :workouts
   end
 end

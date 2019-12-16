@@ -3,11 +3,11 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
   def index
-    redirect_to users_path(@user.username)
+    redirect_to user_path(@user.username)
   end
 
   def show
-    redirect_to users_path(@user.username)
+    redirect_to user_path(@user.username)
   end
 
   # GET /workouts/new
@@ -26,7 +26,7 @@ class WorkoutsController < ApplicationController
 
     respond_to do |format|
       if @workout.save
-        format.html { redirect_to users_path(@user.username), notice: 'Workout was successfully created.' }
+        format.html { redirect_to user_path(@user.username), notice: 'Workout was successfully created.' }
         format.json { render :show, status: :created, location: @workout }
       else
         format.html { render :new }
@@ -40,7 +40,7 @@ class WorkoutsController < ApplicationController
   def update
     respond_to do |format|
       if @workout.update(workout_params)
-        format.html { redirect_to users_path(@user.username), notice: 'Workout was successfully updated.' }
+        format.html { redirect_to user_path(@user.username), notice: 'Workout was successfully updated.' }
         format.json { render :show, status: :ok, location: @workout }
       else
         format.html { render :edit }
@@ -54,7 +54,7 @@ class WorkoutsController < ApplicationController
   def destroy
     @workout.destroy
     respond_to do |format|
-      format.html { redirect_to users_path(@user.username), notice: 'Workout was successfully destroyed.' }
+      format.html { redirect_to user_path(@user.username), notice: 'Workout was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -62,7 +62,7 @@ class WorkoutsController < ApplicationController
   private
 
   def get_user
-    @user = User.where(username: params[:user_id]).take
+    @user = User.where(username: params[:username]).take
   end
 
   # Use callbacks to share common setup or constraints between actions.
@@ -72,6 +72,6 @@ class WorkoutsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def workout_params
-    params.require(:workout).permit(:title, :desc, :date, :intensity, :workout_type, :user_id)
+    params.require(:workout).permit(:title, :desc, :date, :intensity, :workout_type, :username)
   end
 end

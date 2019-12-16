@@ -21,10 +21,21 @@
   background-color: #333;
   overflow: hidden;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
 }
 
-.top-nav a {
+.top-nav img {
+  height: 32px;
+  width: 32px;
+}
+
+.top-nav .menu {
+  display: flex;
+}
+
+.top-nav .menu a {
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -32,7 +43,7 @@
   font-size: 17px;
 }
 
-.top-nav a:hover {
+.top-nav .menu a:hover {
   background-color: #ddd;
   color: black;
 }
