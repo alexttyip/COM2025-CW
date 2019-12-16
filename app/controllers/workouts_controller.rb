@@ -62,7 +62,7 @@ class WorkoutsController < ApplicationController
   private
 
   def get_user
-    @user = User.where(username: params[:username]).take
+    @user = User.find(params[:user_id])
   end
 
   # Use callbacks to share common setup or constraints between actions.
