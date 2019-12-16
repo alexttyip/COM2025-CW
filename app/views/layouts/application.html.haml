@@ -21,7 +21,7 @@
       .menu
         = link_to "Tree Map", tree_map_path
         - if user_signed_in?
-          = link_to "My profile", root_path
+          = link_to "My profile", user_path(current_user.username)
           = link_to "Edit profile", edit_user_registration_path
           = link_to "Logout", destroy_user_session_path, method: :delete
         - else

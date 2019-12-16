@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def home
     if user_signed_in?
-      redirect_to user_path(current_user.username)
+      @workouts = Workout.order(:date).reverse_order
     end
   end
 

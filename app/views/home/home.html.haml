@@ -1,3 +1,18 @@
 .content
   %h1= t('.welcome')
-  %p= t('.message')
+  - unless user_signed_in?
+    %p= t('.message')
+  - else
+    - @workouts.each do |workout|
+      .card
+        .flex-row
+          =image_tag url_for(workout.user.profile_pic), class: 'profile-pic'
+          %h3{ :class => "name" }= "#{workout.user.first_name} #{workout.user.last_name}"
+          %h2{ :class => "intensity" }= "#{workout.intensity} / 10"
+        .break
+        .flex-row
+          %h1{ :class => "title" }= workout.title
+        .flex-row
+          %h5{ :class => "date" }= "#{workout.date} ∙ #{workout.workout_type.capitalize}"
+        .flex-row
+          %p{ :class => "desc"}= workout.desc
