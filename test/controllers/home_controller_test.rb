@@ -4,15 +4,22 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
     get root_url
     assert_response :success
+
+    assert_select 'h1', 'Welcome to Alex\'s Workout Tracker!'
   end
 
   test "should get contact" do
-    get contact_path
+    get contact_url
     assert_response :success
-    assert_template layout: 'application'
-    #assert_select 'title', 'My Notes'
-    #assert_select 'h1', 'Contact Us'
-    #assert_select 'p', 'Complete the following form to get in touch with us.'
+
+    assert_select 'h1', 'Contact Us'
+  end
+
+  test "should get tree map" do
+    get tree_map_url
+    assert_response :success
+
+    assert_select 'h1', 'Tree Map'
   end
 
   test "should post request contact but no email" do

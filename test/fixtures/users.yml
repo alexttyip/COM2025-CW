@@ -4,8 +4,25 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-#one: {}
-# column: value
-#
-#two: {}
-# column: value
+
+alex:
+  id: 1
+  email: "ty00208@surrey.ac.uk"
+  username: "ty00208"
+  first_name: "Alex"
+  last_name: "Yip"
+  sex: <%= User.sexes[:male] %>
+  dob: <%= Date.new(2000, 1, 1) %>
+#  password: "Password"
+#  password_confirmation: "Password"
+
+johnsmith:
+  id: 2
+  email: "johnsmith@email.com"
+  username: "johnsmith"
+  first_name: "John"
+  last_name: "Smith"
+  sex: <%= User.sexes[:male] %>
+  dob: <%= Date.new(1970, 12, 25) %>
+#  password: "Password"
+#  password_confirmation: "Password"

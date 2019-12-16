@@ -1,15 +1,32 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-#one:
-#  title: MyString
-#  desc: MyString
-#  date: 2019-12-13
-#  intensity: 1
-#  user: one
+running:
+  title: "Awesome Run"
+  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum consequat leo, sollicitudin fermentum sem blandit ac. Aliquam lacus ligula, rutrum eu sollicitudin et, iaculis id mi. Sed at mauris vitae nisi ultrices venenatis non non enim. In hac habitasse platea dictumst. Sed consectetur congue risus, et lacinia lectus volutpat a. Donec aliquam quam ex, at imperdiet nulla luctus eu. Pellentesque laoreet, quam eu cursus luctus, dui lectus faucibus sem, in scelerisque urna metus vitae tortor."
+  date: <%= Date.today - 2 %>
+  intensity: 7
+  user_id: 1
+  workout_type: <%= Workout.workout_types[:running] %>
 
-#two:
-#  title: MyString
-#  desc: MyString
-#  date: 2019-12-13
-#  intensity: 1
-#  user: two
+gym:
+  title: "Gym Session"
+  desc: "Proin velit velit, posuere eu sollicitudin vitae, varius sit amet turpis. Phasellus aliquet augue sit amet nulla semper, eget pretium leo ullamcorper. Vivamus id interdum mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam molestie fermentum diam auctor fermentum. Curabitur sollicitudin massa eu sapien ultricies, id ultrices ipsum volutpat. Vivamus non congue nunc, sed commodo nibh. Proin consequat dolor varius, iaculis felis eu, pharetra sem. Suspendisse potenti. Donec eros sapien, vehicula et viverra in, faucibus vel dolor."
+  date: <%= Date.today - 5 %>
+  intensity: 10
+  user_id: 1
+  workout_type: <%= Workout.workout_types[:gym] %>
+
+cycling:
+  title: "Great Ride!"
+  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum consequat leo, sollicitudin fermentum sem blandit ac. Aliquam lacus ligula, rutrum eu sollicitudin et, iaculis id mi. Sed at mauris vitae nisi ultrices venenatis non non enim. In hac habitasse platea dictumst. Sed consectetur congue risus, et lacinia lectus volutpat a. Donec aliquam quam ex, at imperdiet nulla luctus eu. Pellentesque laoreet, quam eu cursus luctus, dui lectus faucibus sem, in scelerisque urna metus vitae tortor."
+  date: <%= Date.today - 10 %>
+  intensity: 10
+  user_id: 2
+  workout_type: <%= Workout.workout_types[:cycling] %>
+hiking:
+  title: "Perfect Weather for a Hike!!"
+  desc: "Proin velit velit, posuere eu sollicitudin vitae, varius sit amet turpis. Phasellus aliquet augue sit amet nulla semper, eget pretium leo ullamcorper. Vivamus id interdum mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam molestie fermentum diam auctor fermentum. Curabitur sollicitudin massa eu sapien ultricies, id ultrices ipsum volutpat. Vivamus non congue nunc, sed commodo nibh. Proin consequat dolor varius, iaculis felis eu, pharetra sem. Suspendisse potenti. Donec eros sapien, vehicula et viverra in, faucibus vel dolor."
+  date: <%= Date.today - 3 %>
+  intensity: 2
+  user_id: 2
+  workout_type: <%= Workout.workout_types[:hiking] %>

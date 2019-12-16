@@ -45,7 +45,7 @@ workout.user_id = user_id
 workout.workout_type = Workout.workout_types[:gym]
 workout.save!
 
-email = "johnsmith@gmail.com"
+email = "johnsmith@email.com"
 username = "johnsmith"
 
 user = User.new
