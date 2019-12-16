@@ -16,3 +16,6 @@
           %h5{ :class => "date" }= "#{workout.date} ∙ #{workout.workout_type.capitalize}"
         .flex-row
           %p{ :class => "desc"}= workout.desc
+    %a{ :href => new_user_workout_path(current_user.id) }
+      %button{ :class => "fab" }
+        +

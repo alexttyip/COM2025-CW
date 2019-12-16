@@ -8,7 +8,7 @@
 
 
   %h2= "Workouts"
-  - @user.workouts.reverse_each do |workout|
+  - @workouts.each do |workout|
     .card
       .flex-row
         =image_tag url_for(workout.user.profile_pic), class: 'profile-pic'
