@@ -12,6 +12,6 @@
     -#= link_to 'Edit Workout', edit_user_workout_path(@user, workout)
     -#= link_to 'Destroy Workout', [@user, workout], method: :delete, data: { confirm: 'Are you sure?' }
 
-%a{ :href => new_user_workout_path(@user) }
+%a{ :href => new_user_workout_path(@user.username) }
   %button{ :class => "fab" }
     +

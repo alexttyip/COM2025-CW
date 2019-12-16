@@ -8,6 +8,9 @@ class HomeController < ApplicationController
   def contact
   end
 
+  def tree_map
+  end
+
   def request_contact
     name = params[:name]
     email = params[:email]

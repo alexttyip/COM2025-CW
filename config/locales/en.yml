@@ -33,6 +33,9 @@ en:
   app_title: "Workout Tracker"
   app_description: "This is Alex's Workout Tracker"
   home:
+    home:
+      welcome: Welcome to Alex's Workout Tracker!
+      message: To login / signup, click the buttons at the top right corner!
     contact:
       contact_us: "Contact Us"
       name: "Name:"
@@ -44,6 +47,8 @@ en:
       message: "Message:"
       enter_message: What do you want to say?
       submit: Contact Us
+    tree_map:
+      title: Tree Map
     request_contact:
       no_email: You must supply an email address
       email_sent: Thank you. We will be in touch shortly.

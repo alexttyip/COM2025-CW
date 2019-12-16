@@ -18,6 +18,7 @@
 
   %body
     .top-nav
+      = link_to "Tree Map", tree_map_path
       - if user_signed_in?
         = link_to "My profile", root_path
         = link_to "Edit profile", edit_user_registration_path

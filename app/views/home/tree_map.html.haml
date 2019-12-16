@@ -1,0 +1,82 @@
+%h1=t('.title')
+-#%ul
+-#  %li= t('.root')
+%table{ border: "1", id: "tree-map" }
+  %thead
+    %tr
+      %th Prefix
+      %th Verb
+      %th URI Pattern
+      %th Controller#Action
+      %th
+
+  %tbody
+    %tr
+      %td root
+      %td GET
+      %td= "/"
+      %td home#home
+      %td= link_to 'Go', root_path
+    %tr
+      %td contact
+      %td GET
+      %td= "/contact"
+      %td home#contact
+      %td= link_to 'Go', contact_path
+    %tr
+      %td tree_map
+      %td GET
+      %td= "/tree_map"
+      %td home#tree_map
+      %td= link_to 'Go', tree_map_path
+    %tr
+      %td new_user_session
+      %td GET
+      %td= "/sign_in"
+      %td devise/sessions#new
+      %td= link_to 'Go', new_user_session_path
+    %tr
+      %td destroy_user_session
+      %td DELETE
+      %td= "/logout"
+      %td devise/sessions#destroy
+      %td
+    %tr
+      %td new_user_registration
+      %td GET
+      %td= "/sign_up"
+      %td devise/registrations#new
+      %td= link_to 'Go', new_user_registration_path
+    %tr
+      %td edit_user_registration
+      %td GET
+      %td= "/edit"
+      %td devise/registrations#edit
+      %td= link_to 'Go', edit_user_registration_path
+    %tr
+      %td cancel_user_registration
+      %td GET
+      %td= "/cancel"
+      %td devise/registrations#cancel
+      %td= link_to 'Go', cancel_user_registration_path
+    %tr
+      %td new_user_password
+      %td GET
+      %td= "/password/new"
+      %td devise/password#new
+      %td= link_to 'Go', new_user_password_path
+    %tr
+      %td edit_user_password
+      %td GET
+      %td= "/password/edit"
+      %td devise/password#edit
+      %td= link_to 'Go', edit_user_password_path
+    %tr
+      %td users
+      %td GET
+      %td= "/u/:username"
+      %td users#index
+      - if user_signed_in?
+        %td= link_to 'Go', users_path(current_user)
+      - else
+        %td
